@@ -12,9 +12,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     # https://stackoverflow.com/a/8521644/812183
     parser.add_argument('-V', '--version', action='version', version=f'%(prog)s {identify.__version__}')
     parser.add_argument(
-        '--filename-only', action='store_true', help="Generate tags purely from the filename string passed in, avoiding any disk interaction.
+        '--filename-only', action='store_true', help='Generate tags purely from the filename string passed in, avoiding any disk interaction.'
     )
-    parser.add_argument('path', help="The path to the file on disk to identify or a string representing a potential file name.")
+    parser.add_argument('path', help='The path to the file on disk to identify or a string representing a potential file name.')
     args = parser.parse_args(argv)
 
     if args.filename_only:
