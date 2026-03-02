@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import importlib.metadata
 from collections.abc import Sequence
 
 from identify import identify
@@ -10,7 +11,7 @@ from identify import identify
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog='identify')
     # https://stackoverflow.com/a/8521644/812183
-    parser.add_argument('-V', '--version', action='version', version=f'%(prog)s {identify.__version__}')
+    parser.add_argument('-V', '--version', action='version', version=f'%(prog)s {importlib.metadata.version('identify')}')
     parser.add_argument(
         '--filename-only', action='store_true', help='Generate tags purely from the filename string passed in, avoiding any disk interaction.'
     )
