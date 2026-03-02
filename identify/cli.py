@@ -8,7 +8,9 @@ from identify import identify
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog='identify')
+    # https://stackoverflow.com/a/8521644/812183
+    parser.add_argument('-V', '--version', action='version', version=f'%(prog)s {identify.__version__}')
     parser.add_argument('--filename-only', action='store_true')
     parser.add_argument('path')
     args = parser.parse_args(argv)
